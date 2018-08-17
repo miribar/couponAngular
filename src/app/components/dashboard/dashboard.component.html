@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-button (click)="router.navigate(['dashboard/admin'])">Admin</button>
+      <button mat-button (click)="router.navigate(['dashboard/admin/getallcompanies'])">Admin/getallcompanies</button>
+      <button mat-button (click)="router.navigate(['dashboard/getallcompanies'])">getallcompanies</button>
+      <button mat-button (click)="router.navigate(['dashboard/company'])">Company</button>
+      <button mat-button (click)="router.navigate(['dashboard/customer'])">Customer</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="router-outlet">
+  <router-outlet></router-outlet>
+</div>

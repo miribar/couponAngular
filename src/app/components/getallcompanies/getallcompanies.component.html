@@ -1,0 +1,29 @@
+<button mat-button (click)="clickHandler('getallcompanies')">Get Companies</button>
+<!-- <button mat-button (click)="router.navigate(['dashboard/getallcompanies'])">getallcompanies</button> -->
+
+
+<div *ngIf="data" id="data-container">
+    <table>
+        <!-- <tr>
+            <td *ngFor="let k of keys[0]">{{k}} </td>
+        </tr> -->
+
+        <tr *ngFor="let item of data; let i=index;">
+            <td>{{item.id}}
+                    <!-- <button mat-button (click)="clickHandler('getcustomer/{{item[k]}}')">Get Сustomers</button> -->
+                    <button mat-button (click)="clickHandler('getcustomer')">Get</button>
+            </td>
+            <td>{{item.compName}}</td>
+            <td>{{item.email}}</td>
+            <td> coupones:
+                <tr *ngFor="let coupon of item.coupons;">
+                   <td> {{coupon.id}}</td>
+                   <td> {{coupon.title}}</td>
+                   <td> {{coupon.amount}}</td>
+                   <td> {{coupon.enddate}}</td>
+                   <td> {{coupon.price}}</td>
+                </tr>
+            </td>
+        </tr>         
+    </table>
+</div>
