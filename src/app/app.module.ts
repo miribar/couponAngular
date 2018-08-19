@@ -11,9 +11,15 @@ import { LoginComponent } from './components/login/login.component';
 import { CustomMaterialModule } from '../assets/custom.material.module';
 import { routing } from './app.routing';
 import { MainService } from './services/main.service';
-import { HttpClientModule } from '../../node_modules/@angular/common/http';
-import { GetallcompaniesComponent } from './components/getallcompanies/getallcompnies.component';
-import { GetallcustomersComponent } from './components/getallcustomers/getallcustomers.component'
+import { HttpClientModule } from '@angular/common/http';
+import { GetallcompaniesComponent } from './components/getallcompanies/getallcompanies.component'
+import { GetallcustomersComponent } from './components/getallcustomers/getallcustomers.component';
+import { AddcompanyComponent } from './components/addcompany/addcompany.component';
+import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/forms';
+import { CommonModule } from '../../node_modules/@angular/common';
+import { AddcustomerComponent } from './components/addcustomer/addcustomer.component';
+import { EditcustomerComponent } from './components/editcustomer/editcustomer.component';
+import { GetallcouponsComponent } from './components/getallcoupons/getallcoupons.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +30,20 @@ import { GetallcustomersComponent } from './components/getallcustomers/getallcus
     GetallcompaniesComponent,
     GetallcustomersComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    GetallcompaniesComponent,
+    AddcompanyComponent,
+    AddcustomerComponent,
+    EditcustomerComponent,
+    GetallcouponsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    CommonModule,
+    FormsModule,
     CustomMaterialModule,
     routing
   ],

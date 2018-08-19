@@ -1,10 +1,9 @@
-<button mat-button (click)="clickHandler('getallcompanies')">Get Companies</button>
-<!-- <button mat-button (click  )="clickHandler('getallcustomers')">Get Сustomers</button> -->
-<!-- <button mat-button (click)="clickHandler('getcustomer/1')">Get Сustomer</button> -->
-
-<button mat-button (click)="router.navigate(['dashboard/admin/getallcompanies'])">getallcompanies</button>
-
-<!-- <app-getallcompanies></app-getallcompanies> -->
-<!-- <app-getallcustomers></app-getallcustomers> -->
-
- 
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-button (click)="router.navigate(['dashboard/admin/getallcustomers'])">Customers List</button>
+        <button mat-button (click)="router.navigate(['dashboard/admin/addcustomer'])">+Customer</button>
+        <button mat-button (click)="router.navigate(['dashboard/admin/getallcompanies'])">Companies List</button>
+        <button mat-button (click)="router.navigate(['dashboard/admin/addcompany'])">+Company</button> 
+    </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

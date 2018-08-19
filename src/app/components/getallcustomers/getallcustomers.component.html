@@ -1,18 +1,21 @@
-<button mat-button (click)="clickHandler('getallcustomers')">Get Customers</button>
+
+<div><p>Customers List</p></div>
+<div><p><button mat-button (click)="clickHandler('getallcustomers')" style="background: green;">Refresh</button></p></div>
 
 
 <div *ngIf="data" id="data-container">
     <table>
-        <tr>
+        <!-- <tr>
             <td *ngFor="let k of keys[0]">{{k}} </td>
-        </tr>
+        </tr> -->
 
         <tr *ngFor="let item of data; let i=index;">
-            <td>{{item.id}}
-                    <!-- <button mat-button (click)="clickHandler('getcustomer/{{item[k]}}')">Get Сustomers</button> -->
-                    <button mat-button (click)="clickHandler('getcustomer')">Get</button>
-            </td>
+            <td>{{item.id}}</td>
+            <td><button mat-button (click)="clickHandler('getcustomer/' + item['id'])" style="background: yellow;">Get</button></td>
+            <td><button mat-button (click)="clickHandler('deletecustomer/' + item['id'])" style="background: red;">Del</button></td>
+            <td><button mat-button (click)="router.navigate(['dashboard/admin/addcustomer/'])" style="background:darkorchid;">Edit</button></td>
             <td>{{item.custName}}</td>
+            <td>{{item.email}}</td>
             <td> coupones:
                 <tr *ngFor="let coupon of item.coupons;">
                    <td> {{coupon.id}}</td>
@@ -22,6 +25,7 @@
                    <td> {{coupon.price}}</td>
                 </tr>
             </td>
+
         </tr>         
     </table>
 </div>

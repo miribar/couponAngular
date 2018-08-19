@@ -1,0 +1,31 @@
+<div><p>Coupons List</p></div>
+<div><p><button mat-button (click)="clickHandler('getallcompanycoupons/1')" style="background: green;">Refresh</button></p></div>
+
+<div><input matInput placeholder="Filter by company id:" [(ngModel)]="compID"></div>
+<div><p><button mat-raised-button (click)="onSubmit()" style="background-color: olivedrab">Submit</button></p></div>
+
+<div *ngIf="data" id="data-container">
+    <table>
+      <tr  style="background-color: goldenrod">
+          <td> ID</td>
+          <td> type</td>
+          <td> title</td>
+          <td> amount</td>
+          <td> price</td>
+          <td> startDate</td>
+          <td> endDate</td>
+         <td></td> 
+      </tr> 
+      <tr *ngFor="let coupon of data;" style="background-color: rgb(160, 235, 245)">
+        <td> {{coupon.id}}</td>
+        <td> {{coupon.type}}</td>
+        <td> {{coupon.title}}</td>
+        <td> {{coupon.amount}}</td>
+        <td> {{coupon.price}}</td>
+        <td> {{coupon.startDate}}</td>
+        <td> {{coupon.endDate}}</td>
+        <td><button mat-button (click)="clickHandler('deletecoupon/' + coupon['id'])" style="background: red;">Del</button></td>
+      </tr>
+
+    </table>
+  </div>

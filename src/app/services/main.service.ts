@@ -13,7 +13,7 @@ export class MainService {
     request(route: string) {
         return this._http.get(`${serverRoute}/${route}`);
     }
-    requestPost(route: string, body: string) {
+    requestPost(route: string, body: any) {
        return this._http.post(`${serverRoute}/${route}`, body);
     }
 }

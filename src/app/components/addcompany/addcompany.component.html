@@ -1,0 +1,10 @@
+<div class="example-container">
+    <p><strong>Create company</strong></p>
+    <div>
+        <div><input matInput placeholder="Enter company name" [(ngModel)]="compName"></div>
+        <div><input matInput placeholder="Enter company password" [(ngModel)]="password"></div> 
+        <div> <input matInput placeholder="Enter company email" [(ngModel)]="email"></div>
+        <p><button mat-raised-button (click)="onSubmit()" style="background-color: olivedrab">Submit</button></p>
+    </div>
+</div>
+

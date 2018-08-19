@@ -5,7 +5,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { GetallcompaniesComponent} from './components/getallcompanies/getallcompnies.component';
+import { GetallcompaniesComponent} from './components/getallcompanies/getallcompanies.component';
+import { GetallcustomersComponent} from './components/getallcustomers/getallcustomers.component';
+import { AddcompanyComponent} from './components/addcompany/addcompany.component';
+import {AddcustomerComponent} from './components/addcustomer/addcustomer.component';
+import { GetallcouponsComponent}  from './components/getallcoupons/getallcoupons.component'
 
 import { CompanyComponent} from './components/company/company.component';
 import { CustomerComponent} from './components/customer/customer.component';
@@ -25,23 +29,26 @@ const appRoutes: Routes = [
                 component: AdminComponent,
                 children: [
                     {
+                        path: 'getallcustomers',
+                        component: GetallcustomersComponent
+                    },
+                    {
                         path: 'getallcompanies',
                         component: GetallcompaniesComponent
+                    },
+                    {
+                        path: 'addcompany',
+                        component: AddcompanyComponent
+                    }
+                    ,
+                    {
+                        path: 'addcustomer',
+                        component: AddcustomerComponent
                     }
                 ]                
         
             },
             { 
-                path: 'company', 
-                component: CompanyComponent,
-                children: [
-                    // {
-                    //     path: 'getallcompanies',
-                    //     component: GetallcompaniesComponent
-                    // }
-                ]                
-        
-            },{ 
                 path: 'customer', 
                 component: CustomerComponent,
                 children: [
@@ -51,34 +58,21 @@ const appRoutes: Routes = [
                     // }
                 ]                
         
-            },  
-            
-            { 
+            }, { 
                 path: 'company', 
                 component: CompanyComponent,
                 children: [
-                    // {
-                    //     path: 'getallcompanies',
-                    //     component: GetallcompaniesComponent
-                    // }
+                    {
+                        path: 'getallcoupons',
+                        component: GetallcouponsComponent
+                    }
                 ]                
         
             }
-            ,  
-            
-            { 
-                path: 'getallcompanies', 
-                component: GetallcompaniesComponent,
-                children: [
-                    // {
-                    //     path: 'getallcompanies',
-                    //     component: GetallcompaniesComponent
-                    // }
-                ]                
-        
-            }
+
         ]
     },
+
     // otherwise redirect to home
     {
         path: '**',
