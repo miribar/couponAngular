@@ -1,6 +1,7 @@
 # Coupon
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
+Coupon dashboard is at http://localhost:4200/dashboard/ .
 
 ## Development server
 

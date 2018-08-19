@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MainService } from '../../services/main.service';
-import { GetallcustomersComponent } from '../getallcustomers/getallcustomers.component'
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,17 +10,12 @@ import { Router } from '@angular/router';
 export class AdminComponent implements OnInit {
   data: any;
   keys: any;
-  constructor(private _mainService: MainService, private router: Router
-   // , public ggggg: GetallcustomersComponent  
+  constructor(private _mainService: MainService, private router: Router 
   ) {}
 
   ngOnInit() {}
 
   clickHandler(route: string) {
-    alert('aaaaa');
-    let g = new GetallcustomersComponent(this._mainService);
-    this.data = g.clickHandler(route);
-   // GetallcustomersComponent.call(GetallcustomersComponent.clickHandler(route));
     this._mainService.request(route).subscribe(res => {
       if(res instanceof Object && !res.hasOwnProperty('result')){
         this.data = [];
@@ -37,7 +31,6 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  
 }
 
 interface customer {

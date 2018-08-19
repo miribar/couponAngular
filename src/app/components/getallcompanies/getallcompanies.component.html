@@ -1,28 +1,39 @@
-<button mat-button (click)="clickHandler('getallcompanies')">Get Companies</button>
-<!-- <button mat-button (click)="router.navigate(['dashboard/getallcompanies'])">getallcompanies</button> -->
-
+<div><p>Companies List</p></div>
+<div><p><button mat-button (click)="clickHandler('getallcompanies')" style="background: green;">Refresh</button></p></div>
 
 <div *ngIf="data" id="data-container">
     <table>
-        <!-- <tr>
-            <td *ngFor="let k of keys[0]">{{k}} </td>
-        </tr> -->
+
 
         <tr *ngFor="let item of data; let i=index;">
-            <td>{{item.id}}
-                    <!-- <button mat-button (click)="clickHandler('getcustomer/{{item[k]}}')">Get Сustomers</button> -->
-                    <button mat-button (click)="clickHandler('getcustomer')">Get</button>
-            </td>
+            <td>{{item.id}}</td>
+
+            <td><button mat-button (click)="clickHandler('getcompany/' + item['id'])" style="background: yellow;">Get</button></td>
+            <td><button mat-button (click)="clickHandler('deletecompany/' + item['id'])" style="background: red;">Del</button></td>
+ 
             <td>{{item.compName}}</td>
             <td>{{item.email}}</td>
-            <td> coupones:
-                <tr *ngFor="let coupon of item.coupons;">
+            <td *ngIf="item['coupons'].length > 0"> Coupones:
+                <tr  style="background-color: goldenrod">
+                    <td> ID</td>
+                    <td> type</td>
+                    <td> title</td>
+                    <td> amount</td>
+                    <td> price</td>
+                    <td> startDate</td>
+                    <td> endDate</td>
+                    <td>
+                </tr> 
+                <tr *ngFor="let coupon of item.coupons;" style="background-color: rgb(160, 235, 245)">
                    <td> {{coupon.id}}</td>
+                   <td> {{coupon.type}}</td>
                    <td> {{coupon.title}}</td>
                    <td> {{coupon.amount}}</td>
-                   <td> {{coupon.enddate}}</td>
                    <td> {{coupon.price}}</td>
+                   <td> {{coupon.startDate}}</td>
+                   <td> {{coupon.endDate}}</td>
                 </tr>
+               <tr> <td><button mat-button (click)="router.navigate(['dashboard/company/getallcoupons'])">Coupons List</button></td></tr>
             </td>
         </tr>         
     </table>
